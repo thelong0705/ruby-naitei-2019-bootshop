@@ -14,7 +14,9 @@ gem "uglifier", ">= 1.3.0"
 
 gem "coffee-rails", "~> 4.2"
 gem "jbuilder", "~> 2.5"
+gem "simplecov", require: false, group: :test
 gem "turbolinks", "~> 5"
+gem "config"
 # gem 'redis', '~> 4.0'
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -23,8 +25,7 @@ gem "turbolinks", "~> 5"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
-  gem "capybara", ">= 2.15"
-  gem "selenium-webdriver"
+  gem "rspec-rails", "~> 3.8"
 end
 
 group :development do
