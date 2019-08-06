@@ -38,3 +38,6 @@ config/settings/*
 
 #Ignore picture
 public/uploads/
+
+# Ignore coverage created by simple cov
+coverage
