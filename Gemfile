@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem "font-awesome-rails"
 gem "puma", "~> 3.7"
 gem "rails", "~> 5.1.7"
 gem "rubocop", "~> 0.54.0", require: false
@@ -13,10 +14,14 @@ gem "sqlite3"
 gem "uglifier", ">= 1.3.0"
 
 gem "coffee-rails", "~> 4.2"
+gem "config"
+gem "config"
+gem "devise"
+gem "devise-i18n"
 gem "jbuilder", "~> 2.5"
+gem "sidekiq"
 gem "simplecov", require: false, group: :test
 gem "turbolinks", "~> 5"
-gem "config"
 # gem 'redis', '~> 4.0'
 # gem 'bcrypt', '~> 3.1.7'
 

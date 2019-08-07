@@ -9,6 +9,28 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div id="header">
+      <div class="container">
+        <% if current_user %>
+          <%= render "shared/welcome" %>
+      <% end %>
+        <%= render "shared/nav" %>
+      </div>
+    </div>
+
+    <div id="mainBody">
+      <div class="container">
+        <% if notice %>
+          <p class="notice"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+          <p class="alert"><%= alert %></p>
+      <% end %>
+        <div class="row">
+          <%= render "shared/sidebar" %>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
