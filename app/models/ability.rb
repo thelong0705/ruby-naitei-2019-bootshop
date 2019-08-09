@@ -6,10 +6,11 @@ class Ability
   def initialize user
     user ||= User.new
 
-    if user.has_role?
-      can :manage, :all
-    else
-      can :read, :all
-    end
+    can :read, :all
+    return unless user.has_role? :admin
+
+    can :access, :rails_admin
+    can :read, :dashboard
+    can :manage, [User, Product]
   end
 end
