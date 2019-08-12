@@ -1,4 +1,13 @@
-ActiveRecord::Schema.define(version: 20190808024551) do
+ActiveRecord::Schema.define(version: 20190808040459) do
+
+  create_table "carts", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "product_id"
+    t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "product_id"], name: "index_carts_on_user_id_and_product_id"
+  end
 
   create_table "products", force: :cascade do |t|
     t.string "name"

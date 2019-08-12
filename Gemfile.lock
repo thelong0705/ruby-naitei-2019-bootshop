@@ -85,11 +85,11 @@ GEM
     dry-equalizer (0.2.2)
     dry-inflector (0.1.2)
     dry-initializer (3.0.1)
-    dry-logic (1.0.2)
+    dry-logic (1.0.3)
       concurrent-ruby (~> 1.0)
       dry-core (~> 0.2)
       dry-equalizer (~> 0.2)
-    dry-schema (1.3.1)
+    dry-schema (1.3.2)
       concurrent-ruby (~> 1.0)
       dry-configurable (~> 0.8, >= 0.8.3)
       dry-core (~> 0.4)
@@ -97,7 +97,7 @@ GEM
       dry-initializer (~> 3.0)
       dry-logic (~> 1.0)
       dry-types (~> 1.0)
-    dry-types (1.1.0)
+    dry-types (1.1.1)
       concurrent-ruby (~> 1.0)
       dry-container (~> 0.3)
       dry-core (~> 0.4, >= 0.4.4)
@@ -137,6 +137,8 @@ GEM
       activerecord
       kaminari-core (= 1.1.1)
     kaminari-core (1.1.1)
+    kart (0.3.0)
+      activesupport
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -183,7 +185,7 @@ GEM
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
-    rails-html-sanitizer (1.0.4)
+    rails-html-sanitizer (1.1.0)
       loofah (~> 2.2, >= 2.2.2)
     rails_admin (2.0.0.rc)
       activemodel-serializers-xml (>= 1.0)
@@ -317,6 +319,7 @@ DEPENDENCIES
   devise-i18n
   font-awesome-rails
   jbuilder (~> 2.5)
+  kart
   listen (>= 3.0.5, < 3.2)
   puma (~> 3.7)
   rails (~> 5.1.7)
