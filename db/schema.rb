@@ -1,4 +1,22 @@
-ActiveRecord::Schema.define(version: 20190809013724) do
+ActiveRecord::Schema.define(version: 20190813071112) do
+
+  create_table "carts", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "product_id"
+    t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "product_id"], name: "index_carts_on_user_id_and_product_id"
+  end
+
+  create_table "credit_cards", force: :cascade do |t|
+    t.string "digits"
+    t.integer "month"
+    t.integer "year"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.float "price"
@@ -31,6 +49,7 @@ ActiveRecord::Schema.define(version: 20190809013724) do
     t.string "unconfirmed_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "stripe_token"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

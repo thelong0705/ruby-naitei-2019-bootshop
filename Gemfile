@@ -23,9 +23,11 @@ gem "devise"
 gem "devise-i18n"
 gem "faker"
 gem "jbuilder", "~> 2.5"
+gem "kart"
 gem "rolify"
 gem "sidekiq"
 gem "simplecov", require: false, group: :test
+gem "stripe"
 gem "turbolinks", "~> 5"
 # gem 'redis', '~> 4.0'
 # gem 'bcrypt', '~> 3.1.7'

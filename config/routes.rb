@@ -3,8 +3,12 @@ Rails.application.routes.draw do
   root to: "static_pages#index"
   resources :categories, only: :show
   resources :products, only: :show
+  root to: "static_pages#index"
+
   devise_for :users, controllers: {
     registrations: "users/registrations",
     sessions: "users/sessions"
   }
+  resources :carts, only: %i(index)
+  resources :charges, only: %i(create)
 end
