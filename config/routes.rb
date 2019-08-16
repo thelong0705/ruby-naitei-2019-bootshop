@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   }
   
   resources :carts, only: %i(index)
+  post "carts", to: "carts#update"
 
   resources :charges, only: %i(create)
 end

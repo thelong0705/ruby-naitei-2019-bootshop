@@ -1,5 +1,7 @@
-<% unless current_user.nil? %>
-  <%= current_user.show_cart %>
+<% if current_user %>
+  <% current_user.selecting_products.each do |product| %>
+    <%= render partial: "products/in_cart_product", locals: {product: product} %>
+  <% end %>
   
   <%= form_tag charges_path do %>
     <% if flash[:error].present? %>
