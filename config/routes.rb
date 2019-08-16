@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   
   resources :carts, only: %i(index)
   post "carts", to: "carts#update"
+  delete "carts", to: "carts#destroy"
 
   resources :charges, only: %i(create)
 end

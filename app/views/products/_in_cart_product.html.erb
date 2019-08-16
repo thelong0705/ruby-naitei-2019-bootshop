@@ -9,7 +9,12 @@
   <%= current_user.show_cart.where(product_id: product.id).pluck(:quantity)[0] %>
   <%= form_tag carts_path, remote: true do %>
     <%= hidden_field_tag "btn_type", "add" %>
+    <%= hidden_field_tag "product_qty", "1" %>
     <%= hidden_field_tag "product_id", product.id %>
     <%= button_tag "Add" %>
   <% end %>
+  <%= form_tag carts_path, remote: true, method: :delete do %>
+    <%= hidden_field_tag "product_id", product.id %>
+    <%= button_tag "Delete" %>
+  <% end %> 
 </div>
