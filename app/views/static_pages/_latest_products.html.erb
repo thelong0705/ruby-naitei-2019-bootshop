@@ -1,0 +1,8 @@
+<h4>Latest Products </h4>
+<ul class="thumbnails">
+  <% @products[0..5].each do |p| %>
+    <li class="span3">
+      <%= render "latest_product", product: p %>
+    </li>
+  <% end %>
+</ul>

@@ -1,0 +1,16 @@
+<div class="tab-pane fade" id="profile">
+  <div class="tab-content">
+    <div class="tab-pane active" id="blockView">
+      <ul class="thumbnails">
+        <% @products.each do |p| %>
+          <li class="span3">
+            <%= render "static_pages/latest_product", product: p %>
+          </li>
+        <% end %>
+      </ul>
+
+      <hr class="soft"/>
+    </div>
+  </div>
+  <br class="clr">
+</div>

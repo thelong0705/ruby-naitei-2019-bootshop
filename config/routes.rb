@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   mount RailsAdmin::Engine => "/admin", as: "rails_admin"
   
+  resources :categories, only: :show
+  resources :products, only: :show
   devise_for :users, controllers: {
     registrations: "users/registrations",
     sessions: "users/sessions"

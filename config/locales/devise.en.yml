@@ -67,3 +67,9 @@ en:
     registrations:
       new:
         sign_up: "Sign up"
+  categories:
+    show:
+      category_not_found: "Category not found"
+  products:
+    show:
+      product_not_found: "Product not found"

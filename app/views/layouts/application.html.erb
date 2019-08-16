@@ -17,7 +17,7 @@
         <%= render "shared/nav" %>
       </div>
     </div>
-
+    <%= yield(:carousel) %>
     <div id="mainBody">
       <div class="container">
         <% if notice %>
@@ -32,5 +32,6 @@
         </div>
       </div>
     </div>
+    <%= render "shared/footer" %>
   </body>
 </html>
