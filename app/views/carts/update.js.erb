@@ -1,1 +1,6 @@
-$("#product_<%= @product.id %>").html('<%= j render partial: "products/in_cart_product", locals: {product: @product} %>')
+$("#product_<%= @product.id %>")
+    .html('<%= j render partial: "products/in_cart_product",
+            locals: {product: @product} %>')
+
+$("#form_add_product_<%= @product.id %>").toggle()
+$("#form_remove_product_<%= @product.id %>").toggle()

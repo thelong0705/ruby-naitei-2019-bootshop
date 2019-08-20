@@ -12,17 +12,22 @@
       <h3><%= @product.name %></h3>
       <small>Some description</small>
       <hr class="soft"/>
-      <form class="form-horizontal qtyFrm">
+      <%= form_tag carts_path, class: "form-horizontal qtyFrm" do %>
+        <%= hidden_field_tag "btn_type", "add" %>
+        <%= hidden_field_tag "product_id", @product.id %>
         <div class="control-group">
           <label class="control-label"><span>
             $<%= @product.price %>
           </span></label>
           <div class="controls">
-            <input type="number" class="span1" placeholder="Qty."/>
+              <input type="number" min="1" value="1" class="span1" name="product_qty"/>
             <button type="submit" class="btn btn-large btn-primary pull-right"> Add to cart
               <i class=" icon-shopping-cart"></i></button>
           </div>
         </div>
+      <% end %>
+      <form class="form-horizontal qtyFrm">
+
       </form>
 
       <hr class="soft clr"/>

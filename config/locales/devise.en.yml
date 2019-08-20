@@ -73,3 +73,6 @@ en:
   products:
     show:
       product_not_found: "Product not found"
+  carts:
+    destroy:
+      fail_to_delete_item: "Fail to delete item"

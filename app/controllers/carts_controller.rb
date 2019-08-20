@@ -13,7 +13,7 @@ class CartsController < ApplicationController
     end
 
     respond_to do |f|
-      f.html {redirect_to :index}
+      f.html {redirect_to :carts}
       f.js
     end
   end
