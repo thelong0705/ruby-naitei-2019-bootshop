@@ -1,0 +1,8 @@
+<td><img width="60" src=<%= bill.product.image.url %> alt=""/></td>
+<td><%= bill.product.name %></td>
+<td>
+  <%= bill.quantity %>
+</td>
+<td>$<%= bill.product.price %></td>
+<td>$<%= bill.product.price * bill.quantity %></td>
+<td><%= bill.created_at %></td>
