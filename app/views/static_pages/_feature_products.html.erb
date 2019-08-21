@@ -7,7 +7,7 @@
       <div class="carousel-inner">
         <div class="item active">
           <ul class="thumbnails">
-            <% @products[0..3].each do |p| %>
+            <% Product.all[0..3].each do |p| %>
               <li class="span3">
                 <%= render "feature_product", product: p %>
               </li>
@@ -16,7 +16,7 @@
         </div>
         <div class="item">
           <ul class="thumbnails">
-            <% @products[4..7].each do |p| %>
+            <% Product.all[4..7].each do |p| %>
               <li class="span3">
                 <%= render "feature_product", product: p %>
               </li>
