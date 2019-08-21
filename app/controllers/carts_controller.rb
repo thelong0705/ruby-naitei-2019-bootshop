@@ -1,7 +1,12 @@
 class CartsController < ApplicationController
   before_action :load_product, only: %i(update destroy)
 
-  def index; end
+  def index
+    redirect_to root_path unless current_user
+    
+    @total = current_user.carts.
+      inject(0) { |result, cart| result + cart.product.price * cart.quantity}
+  end
 
   def update
     if params[:btn_type] == "add"
@@ -23,7 +28,7 @@ class CartsController < ApplicationController
 
     if item.destroy
       respond_to do |f|
-        f.html {redirect_to :index}
+        f.html {redirect_to :carts}
         f.js
       end
     else

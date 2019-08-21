@@ -1,20 +1,52 @@
+<!--<div id="product_<%#= product.id %>">-->
+<%#= product.name %>
+<%#= product.price %>
+<%#= form_tag carts_path, remote: true do %>
+<%#= hidden_field_tag "btn_type", "remove" %>
+<%#= hidden_field_tag "product_id", product.id %>
+<%#= button_tag "Remove" %>
+<%# end %>
+<%#= current_user.show_cart.where(product_id: product.id).pluck(:quantity)[0] %>
+<%#= form_tag carts_path, remote: true do %>
+<%#= hidden_field_tag "btn_type", "add" %>
+<%#= hidden_field_tag "product_qty", "1" %>
+<%#= hidden_field_tag "product_id", product.id %>
+<%#= button_tag "Add" %>
+<%# end %>
+<%#= form_tag carts_path, remote: true, method: :delete do %>
+<%#= hidden_field_tag "product_id", product.id %>
+<%#= button_tag "Delete" %>
+<%# end %>
+<!--</div>-->
 <div id="product_<%= product.id %>">
-  <%= product.name %>
-  <%= product.price %>
-  <%= form_tag carts_path, remote: true do %>
-    <%= hidden_field_tag "btn_type", "remove" %>
-    <%= hidden_field_tag "product_id", product.id %>
-    <%= button_tag "Remove" %>
-  <% end %>
-  <%= current_user.show_cart.where(product_id: product.id).pluck(:quantity)[0] %>
-  <%= form_tag carts_path, remote: true do %>
-    <%= hidden_field_tag "btn_type", "add" %>
-    <%= hidden_field_tag "product_qty", "1" %>
-    <%= hidden_field_tag "product_id", product.id %>
-    <%= button_tag "Add" %>
-  <% end %>
-  <%= form_tag carts_path, remote: true, method: :delete do %>
-    <%= hidden_field_tag "product_id", product.id %>
-    <%= button_tag "Delete" %>
-  <% end %> 
+
 </div>
+<tr>
+  <td><img width="60" src=<%= product.image.url %> alt=""/></td>
+  <td><%= product.name %></td>
+  <td>
+    <div class="input-append">
+      <% quantity = current_user.show_cart.where(product_id: product.id).pluck(:quantity)[0] %>
+      <input class="span1" style="max-width:34px"
+             placeholder=<%= quantity %>
+                 id="appendedInputButtons" size="16" type="text">
+      <button class="btn" type="button"><%= fa_icon "minus" %></i></button>
+      <%= form_tag carts_path, remote: true, style: "display:inline" do %>
+        <%= hidden_field_tag "btn_type", "add" %>
+        <%= hidden_field_tag "product_qty", "1" %>
+        <%= hidden_field_tag "product_id", product.id %>
+        <button class="btn"  type="submit">
+          <%= fa_icon "plus" %></i>
+        </button>
+      <% end %>
+      <%= form_tag carts_path, method: :delete, style: "display:inline" do %>
+        <%= hidden_field_tag "btn_type", "remove" %>
+        <%= hidden_field_tag "product_id", product.id %>
+        <button class="btn btn-danger" type="submit"><%= fa_icon "trash" %></button>
+      <% end %>
+
+    </div>
+  </td>
+  <td>$<%= product.price %></td>
+  <td>$<%= product.price * quantity %></td>
+</tr>

@@ -7,9 +7,9 @@ class ChargesController < ApplicationController
 
   def create
     StripeChargesService.new(charges_params, current_user).call
-
+    Cart.where(user_id: current_user.id).delete_all
     flash[:notice] = t ".succeed_in_payment"
-    redirect_to main_app.root_path
+    redirect_to main_app.carts_path
   end
 
   private

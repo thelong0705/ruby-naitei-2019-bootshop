@@ -76,3 +76,6 @@ en:
   carts:
     destroy:
       fail_to_delete_item: "Fail to delete item"
+  charges:
+    create:
+      succeed_in_payment: "Paid successfully"
