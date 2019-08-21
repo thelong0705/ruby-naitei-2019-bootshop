@@ -6,11 +6,9 @@
   </a>
   <div class="navbar-inner">
     <%= link_to image_tag("/images/logo.png"), root_path, class: "brand" %>
-    <%= search_form_for @q, url: root_path, html: {class: "form-inline navbar-search"} do |f| %>
-      <%= f.label :product_name %>
-      <%= f.search_field :name_cont %>
-
-      <%= submit_tag "Go", class: "btn btn-primary", id: "submitButton" %>
+    <%= form_for :static_pages, url: root_path, method: :get, html: {class: "form-inline navbar-search"} do |f|  %>
+      <%= search_field_tag :q, nil %>
+      <%= f.submit "Go", class: "btn btn-primary", id: "submitButton" %>
     <% end %> 
     <ul id="topMenu" class="nav pull-right">
       <% if current_user %>
