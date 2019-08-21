@@ -1,5 +1,4 @@
-//$("#product_<%= @product.id %>")
-//    .html('<%= j render partial: "products/in_cart_product", locals: {product: @product} %>')
-alert('long')
-//$("#form_add_product_<%= @product.id %>").toggle()
-//$("#form_remove_product_<%= @product.id %>").toggle()
+$("#product_<%= @product.id %>")
+    .html('<%= j render partial: "products/in_cart_product", locals: {product: @product} %>')
+
+$("#total_cost").html('<%= current_user.total_cart_costs %>')

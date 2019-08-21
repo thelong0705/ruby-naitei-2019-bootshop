@@ -3,9 +3,7 @@ class CartsController < ApplicationController
 
   def index
     redirect_to root_path unless current_user
-    
-    @total = current_user.carts.
-      inject(0) { |result, cart| result + cart.product.price * cart.quantity}
+    @total = current_user.total_cart_costs
   end
 
   def update
