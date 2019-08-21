@@ -4,7 +4,7 @@
   <div class="input-append">
     <% quantity = current_user.show_cart.where(product_id: product.id).pluck(:quantity)[0] %>
     <input class="span1" style="max-width:34px"
-           placeholder=<%= quantity %>
+           value=<%= quantity %>
                id="appendedInputButtons" size="16" type="text">
     <%= form_tag carts_path, remote: true, style: "display:inline" do %>
       <%= hidden_field_tag "btn_type", "remove" %>
