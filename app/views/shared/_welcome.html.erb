@@ -2,10 +2,10 @@
   <div class="span6">Welcome! <strong><%= current_user.name %></strong></div>
   <div class="span6">
     <div class="pull-right">
-      <span class="btn btn-mini">$0</span>
+      <span class="btn btn-mini"><%= current_user.total_cart_costs %></span>
       <%= link_to carts_path do %>
         <span class="btn btn-mini btn-primary">
-        <%= fa_icon "shopping-cart" %> [ 0 ] Items in your cart </span>
+        <%= fa_icon "shopping-cart" %> [ <%= current_user.carts.size %> ] Items in your cart </span>
       <% end %>
     </div>
   </div>

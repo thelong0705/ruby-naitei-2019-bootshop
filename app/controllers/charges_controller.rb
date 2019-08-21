@@ -14,7 +14,7 @@ class ChargesController < ApplicationController
         quantity: c.quantity)
     end
     Cart.where(user_id: current_user.id).delete_all
-    flash[:notice] = t ".succeed_in_payment"
+    flash[:info] = t ".succeed_in_payment"
     redirect_to main_app.carts_path
   end
 

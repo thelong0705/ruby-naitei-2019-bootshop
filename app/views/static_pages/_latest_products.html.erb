@@ -1,9 +1,12 @@
 <h4>Latest Products </h4>
+<%= paginate @products %>
+
 <ul class="thumbnails">
-  <%= paginate @products %>
+
   <% @products.each do |p| %>
     <li class="span3">
       <%= render "latest_product", product: p %>
     </li>
   <% end %>
+
 </ul>
